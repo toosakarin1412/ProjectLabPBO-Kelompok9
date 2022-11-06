@@ -1,5 +1,5 @@
 package pelanggan;
 
-public class Pelaanggan {
+public class Pelanggan {
     
 }
