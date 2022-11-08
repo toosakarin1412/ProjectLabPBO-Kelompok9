@@ -1,10 +1,15 @@
 package pelanggan;
+import menu.*;
 
 public class Pelanggan {
     private String nama;
     private Menu order[];
 
-    public Pelanggan 
+    public Pelanggan(){
+
+    };
+
+    public Pelanggan(String nama) 
     {
         this.nama = nama;
     }
@@ -26,6 +31,9 @@ public class Pelanggan {
 
     public Menu getOrder()
     {
+        // Sementara
+        Menu menu = new Menu();
 
+        return menu;
     }
 }
