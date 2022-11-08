@@ -27,7 +27,7 @@ public class Pelanggan {
 
     public void addOrder(Menu pesan)
     {
-
+        order.add(pesan);
     }
 
     public ArrayList<Menu> getOrder()
