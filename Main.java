@@ -29,8 +29,19 @@ public class Main {
      * Tampilkan menu
      */
     public void printMenu(){
-
-        // Implementasi
+        try{
+            for(int i = 0;i < daftar_menu.size();i++){
+                System.out.println("==============================");
+                System.out.print("No : " + i + " ");
+                System.out.println("Nama : " + daftar_menu.get(i).getNama());
+                System.out.println("Harga : " + daftar_menu.get(i).getHarga());
+                System.out.println("==============================");
+            };
+        }catch(NullPointerException e){
+            System.out.println("==============================");
+            System.out.println("TIDAK ADA MENU");
+            System.out.println("==============================");
+        }
 
     };
 
@@ -38,9 +49,16 @@ public class Main {
      * Tampilkan pelanggan
      */
     public void printPelanggan(){
-
-        // Implementasi
-
+        try{
+            for(int i = 0;i < cust.size();i++){
+                System.out.print("No : " + i + " ");
+                System.out.println("Nama : " + cust.get(i).getNama());
+            };
+        }catch(NullPointerException e){
+            System.out.println("==============================");
+            System.out.println("TIDAK ADA PELANGGAN");
+            System.out.println("==============================");
+        }
     };
     
     /**
@@ -82,6 +100,9 @@ public class Main {
             try{
                 pilihan = input.nextInt();
             }catch(InputMismatchException e){
+                System.out.println("==============================");
+                System.out.println("INPUT TIDAK VALID");
+                System.out.println("==============================");
                 input.nextLine();
                 continue;
             };
@@ -92,6 +113,7 @@ public class Main {
                 System.out.println("==============================");
                 System.out.println("PELANGGAN");
                 System.out.println("==============================");
+                driver.printPelanggan();
             }else if(pilihan == 3){
                 System.out.println("==============================");
                 System.out.println("TAGIHAN");
