@@ -6,3 +6,4 @@ public class Makanan extends Menu {
         this.harga = harga;
     };
 }
+    

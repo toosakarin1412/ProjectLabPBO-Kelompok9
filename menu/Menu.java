@@ -1,12 +1,8 @@
 package menu;
 
-public class Menu {
-    public String nama;
-    public int harga;
-
-    public Menu(){
-
-    };
+public abstract class Menu {
+    protected String nama;
+    protected int harga;
 
     public int getHarga(){
         return this.harga;

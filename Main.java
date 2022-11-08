@@ -1,6 +1,10 @@
 import menu.*;
+import pelanggan.*;
+import menu.*;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println("Hello World!");
+        Menu[] daftar_menu;
+        Pelanggan[] cust;
     };
 }
