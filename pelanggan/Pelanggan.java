@@ -1,9 +1,10 @@
 package pelanggan;
 import menu.*;
+import java.util.ArrayList;
 
 public class Pelanggan {
     private String nama;
-    private Menu order[];
+    private ArrayList<Menu> order;
 
     public Pelanggan(){
 
@@ -29,7 +30,7 @@ public class Pelanggan {
 
     }
 
-    public Menu[] getOrder()
+    public ArrayList<Menu> getOrder()
     {
         return this.order;
     }
