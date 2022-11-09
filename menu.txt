@@ -1,0 +1,4 @@
+Makanan$Seblak$10000
+Makanan$Nasi Goreng$20000
+Minuman$Pisang$8000
+Minuman$Jeruk$5000

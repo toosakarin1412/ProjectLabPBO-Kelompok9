@@ -4,6 +4,7 @@ import menu.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 import java.io.File;
 import java.io.FileNotFoundException; 
 
@@ -15,15 +16,56 @@ public class Main {
      * Method Constuctor
      */
     public Main(){
-
+        this.readMenu();
     };
 
     /**
      * Baca Menu
      */
     public void readMenu(){
+        try {
+            File myObj = new File("menu.txt");
+            Scanner myReader = new Scanner(myObj);
 
-        // Implementasi
+            while (myReader.hasNextLine()) {
+                ArrayList<String> tokens = new ArrayList<String>();
+                String data = myReader.nextLine();
+                StringTokenizer st = new StringTokenizer(data, "$");
+
+                while(st.hasMoreTokens()){
+                    tokens.add(st.nextToken());
+                }
+
+                if(tokens.get(0).equals("Makanan")){
+                    int harga = 0;
+                    try {
+                        harga = Integer.parseInt(tokens.get(2));
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
+
+                    Makanan mkn = new Makanan(tokens.get(1), harga);
+                    daftar_menu.add(mkn);
+
+                }else if(tokens.get(0).equals("Minuman")){
+                    int harga = 0 ;
+                    try {
+                        harga = Integer.parseInt(tokens.get(2));
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
+
+                    Jus js = new Jus(tokens.get(1), harga);
+                    daftar_menu.add(js);
+                }
+            }
+
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File Tidak dapat di load");
+            e.printStackTrace();
+        }
+
 
     };
 
@@ -34,7 +76,7 @@ public class Main {
         try{
             for(int i = 0;i < daftar_menu.size();i++){
                 System.out.println("==============================");
-                System.out.print("No : " + i + " ");
+                System.out.println("No : " + i + " ");
                 System.out.println("Nama : " + daftar_menu.get(i).getNama());
                 System.out.println("Harga : " + daftar_menu.get(i).getHarga());
                 System.out.println("==============================");
