@@ -59,6 +59,9 @@ public class Main {
                 }
             }
 
+            AirMineral tmp = new AirMineral();
+            daftar_menu.add(tmp);
+
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("File Tidak dapat di load");
