@@ -295,9 +295,18 @@ public class Main {
                     System.out.println("==============================");
 
                     ArrayList<Menu> menuTmp = new ArrayList<Menu>();
-                    menuTmp = driver.getPelanggan(pelIn).getOrder();
-                    for (int i = 0; i < menuTmp.size(); i++) {
-                        System.out.println(menuTmp.get(i).getNama());
+
+                    try {
+                        try {
+                            menuTmp = driver.getPelanggan(pelIn).getOrder();
+                            for (int i = 0; i < menuTmp.size(); i++) {
+                                System.out.println(menuTmp.get(i).getNama());
+                            }
+                        } catch (IndexOutOfBoundsException e) {
+                            System.out.println("Index Tidak Ditemukan");
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println("Index Tidak Ditemukan");
                     }
                 }
 
@@ -355,7 +364,7 @@ public class Main {
                     }
                 }
 
-                if(hps == 1){
+                if (hps == 1) {
                     driver.hapusPelanggan(pelIn);
                 }
             } else if (pilihan == 9) {
