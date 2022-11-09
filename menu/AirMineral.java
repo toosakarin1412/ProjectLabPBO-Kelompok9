@@ -5,7 +5,7 @@ package menu;
  */
 public class AirMineral extends Minuman {
     /**
-     * Method Consturctor air mineral 
+     * Method Constructor air mineral 
      */
     public AirMineral(){
         this.nama = "AirMineral";
