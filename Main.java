@@ -330,7 +330,7 @@ public class Main {
                 while (true) {
                     try {
                         System.out.println("==============================");
-                        System.out.print("No Pel : ");
+                        System.out.print("Pilihan : ");
                         hps = input.nextInt();
                         break;
                     } catch (InputMismatchException e) {
