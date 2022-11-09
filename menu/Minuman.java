@@ -14,7 +14,7 @@ public class Minuman extends Menu {
     };
 
     /**
-     * Mengembalikan nilai dingin atau panas
+     * @return this.dingin mengembalikan nilai dingin atau panas
      */
     public boolean getDingin(){
         return this.dingin;

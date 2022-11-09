@@ -114,7 +114,12 @@ public class Main {
     public void addPelanggan(Pelanggan customer) {
         cust.add(customer);
     };
-
+    
+    /**
+     * hapus pelanggan
+     * 
+     * @param index 
+     */
     public void hapusPelanggan(int index) {
         this.cust.remove(index);
     };
@@ -128,7 +133,13 @@ public class Main {
     public Pelanggan getPelanggan(int index) {
         return this.cust.get(index);
     }
-
+    
+    /**
+     * Dapatkan objek menu
+     * 
+     * @param index 
+     * @return objek menu
+     */
     public Menu getMenu(int index) {
         return this.daftar_menu.get(index);
     }
