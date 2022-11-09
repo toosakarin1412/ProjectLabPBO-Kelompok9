@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Pelanggan {
     private String nama;
-    private ArrayList<Menu> order;
+    private ArrayList<Menu> order = new ArrayList<Menu>();
 
     /**
     * Method Constructor
