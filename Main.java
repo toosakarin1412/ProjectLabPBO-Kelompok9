@@ -4,10 +4,12 @@ import menu.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException; 
 
 public class Main {
-    private ArrayList<Menu> daftar_menu;
-    private ArrayList<Pelanggan> cust;
+    private ArrayList<Menu> daftar_menu = new ArrayList<Menu>();
+    private ArrayList<Pelanggan> cust = new ArrayList<Pelanggan>(); 
 
     /**
      * Method Constuctor
@@ -38,7 +40,6 @@ public class Main {
                 System.out.println("==============================");
             };
         }catch(NullPointerException e){
-            System.out.println("==============================");
             System.out.println("TIDAK ADA MENU");
             System.out.println("==============================");
         }
@@ -51,11 +52,11 @@ public class Main {
     public void printPelanggan(){
         try{
             for(int i = 0;i < cust.size();i++){
-                System.out.print("No : " + i + " ");
+                System.out.println("No : " + i + " ");
                 System.out.println("Nama : " + cust.get(i).getNama());
+                System.out.println("==============================");
             };
         }catch(NullPointerException e){
-            System.out.println("==============================");
             System.out.println("TIDAK ADA PELANGGAN");
             System.out.println("==============================");
         }
@@ -100,7 +101,6 @@ public class Main {
             try{
                 pilihan = input.nextInt();
             }catch(InputMismatchException e){
-                System.out.println("==============================");
                 System.out.println("INPUT TIDAK VALID");
                 System.out.println("==============================");
                 input.nextLine();
@@ -108,14 +108,82 @@ public class Main {
             };
 
             if(pilihan == 1){
+                System.out.println("MENU");
+                System.out.println("==============================");
                 driver.printMenu();
             }else if(pilihan == 2){
-                System.out.println("==============================");
                 System.out.println("PELANGGAN");
                 System.out.println("==============================");
                 driver.printPelanggan();
+
+                System.out.println("1.TAMBAH PELANGGAN");
+                System.out.println("2.TAMBAH PESANAN");
+
+                int pil;
+                while(true){
+                    try{
+                        pil = input.nextInt();
+                        break;
+                    }catch(InputMismatchException e){
+                        System.out.println("INPUT TIDAK VALID");
+                        System.out.println("==============================");
+                        input.nextLine();
+                        continue;
+                    }
+                }
+
+                if(pil == 1){
+                    String namaPel;
+                    System.out.println("==============================");
+                    System.out.print("Nama : ");
+                    input.nextLine();
+                    namaPel = input.nextLine();
+
+                    Pelanggan plg = new Pelanggan(namaPel);
+
+                    driver.addPelanggan(plg);
+                }else if(pil == 2){
+                    driver.printPelanggan();
+
+                    int pelIn;
+                    while(true){
+                        try {
+                            System.out.println("==============================");
+                            System.out.print("No Pel : ");
+                            pelIn = input.nextInt();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("INPUT TIDAK VALID");
+                            System.out.println("==============================");
+                            input.nextLine();
+                            continue;
+                        }
+                    }
+
+                    driver.printMenu();
+
+                    int menIn;
+                    while(true){
+                        try {
+                            System.out.println("==============================");
+                            System.out.print("No Menu : ");
+                            menIn = input.nextInt();
+                            break;
+                        } catch (InputMismatchException e) {
+                            System.out.println("INPUT TIDAK VALID");
+                            System.out.println("==============================");
+                            input.nextLine();
+                            continue;
+                        }
+                    }
+
+                    System.out.println(pelIn);
+                    System.out.println(menIn);
+                }else{
+
+                }
+                
             }else if(pilihan == 3){
-                System.out.println("==============================");
                 System.out.println("TAGIHAN");
                 System.out.println("==============================");
             }else if(pilihan == 9){
