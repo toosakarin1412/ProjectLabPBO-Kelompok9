@@ -5,7 +5,7 @@ package menu;
  */
 public class Jus extends Minuman {
     /**
-     * Method constuctor dari jus
+     * Method constructor dari jus
      * @param nama nama jus
      * @param harga harga jus
      */
